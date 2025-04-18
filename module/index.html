@@ -1,0 +1,3179 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>module.F90 - GTC Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulef90" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GTC Documentation" class="md-header__button md-logo" aria-label="GTC Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GTC Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              module.F90
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GTC Documentation" class="md-nav__button md-logo" aria-label="GTC Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GTC Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📂 源代码文档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            📂 源代码文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ChargeParticle.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ChargeParticle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/M3DC1_interface.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M3DC1 interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/PushFKI.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PushFKI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/PushParticle.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PushParticle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/SDP_interface.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDP interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/VMEC_interface.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VMEC interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/adios2_common.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    adios2 common
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/adios2_data1d_diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    adios2 data1d diagnostics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/adios2_history_diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    adios2 history diagnostics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/antenna.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    antenna
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/boundary_decay.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    boundary decay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/bparasolver.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    bparasolver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/charge.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    charge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/collision.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    collision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/dataout3d.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    dataout3d
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/diagnosis.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    diagnosis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/eqdata.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    eqdata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/eqplot.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    eqplot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/fft_gl.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fft gl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/field.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    field
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/field_operators.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    field operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/function.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/linsolver.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    linsolver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/load.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    load
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/m_dataout3d_adios.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    m dataout3d adios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/main.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    main
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/module.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ohm_law.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ohm law
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/petsc.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    petsc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/petsc_old.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    petsc old
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/phishot.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    phishot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/physical_meaning.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    physical meaning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/poisson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    poisson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/pressure_push.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    pressure push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/push.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/pushfield.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    pushfield
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/radial_bin.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    radial bin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/restart.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    restart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/setup.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/shift.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    shift
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/simple_error_handler.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    simple error handler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/smooth.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    smooth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/snapshot.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    snapshot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/tracking.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/utility.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Comments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Comments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comment-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modulef90">module.F90</h1>
+<h2 id="documentation-comments">Documentation Comments</h2>
+<h3 id="comment-block">Comment Block</h3>
+<p>\file
+Common data modules and general preload modules</p>
+<h3 id="comment-block_1">Comment Block</h3>
+<p>general preload modules: mpi, omp_lib, openacc, cudafor</p>
+<h3 id="comment-block_2">Comment Block</h3>
+<p>error flag used in MPI calls</p>
+<h3 id="comment-block_3">Comment Block</h3>
+<p>global termination of all MPI processes</p>
+<h3 id="comment-block_4">Comment Block</h3>
+<p>float precision control + preload basic modules</p>
+<h3 id="comment-block_5">Comment Block</h3>
+<p>system double precision float length</p>
+<h3 id="comment-block_6">Comment Block</h3>
+<p>system single precision float length</p>
+<h3 id="comment-block_7">Comment Block</h3>
+<p>system default precision float length</p>
+<h3 id="comment-block_8">Comment Block</h3>
+<p>float precession, lk stands for Length of real Kind</p>
+<h3 id="comment-block_9">Comment Block</h3>
+<p>float precession, lk stands for Length of real Kind</p>
+<h3 id="comment-block_10">Comment Block</h3>
+<p>machine accuracy for current chosen float precision</p>
+<h3 id="comment-block_11">Comment Block</h3>
+<p>gtc.out IO unit number</p>
+<h3 id="comment-block_12">Comment Block</h3>
+<p>history.out IO unit number</p>
+<h3 id="comment-block_13">Comment Block</h3>
+<p>data1d.out IO unit number</p>
+<h3 id="comment-block_14">Comment Block</h3>
+<p>number of (n,m) pairs accepted from gtc.in, and diagnosed</p>
+<h3 id="comment-block_15">Comment Block</h3>
+<p>Linear solver identifier for ilaplacian==0</p>
+<h3 id="comment-block_16">Comment Block</h3>
+<p>Linear solver identifier for ilaplacian==1</p>
+<h3 id="comment-block_17">Comment Block</h3>
+<p>Linear solver identifier for bpara</p>
+<h3 id="comment-block_18">Comment Block</h3>
+<p>Linear solver identifier for ohm</p>
+<h3 id="comment-block_19">Comment Block</h3>
+<p>Linear solver identifier for dmat (fem)</p>
+<h3 id="comment-block_20">Comment Block</h3>
+<p>Linear solver identifier for lmat (fem)</p>
+<h3 id="comment-block_21">Comment Block</h3>
+<p>Linear solver identifier for bpara in FEM</p>
+<h3 id="comment-block_22">Comment Block</h3>
+<p>Linear solver identifier for bpara in FEM (dmat)</p>
+<h3 id="comment-block_23">Comment Block</h3>
+<p>Linear solver identifier for bpara in FEM (lmat)</p>
+<h3 id="comment-block_24">Comment Block</h3>
+<p>Psi0 limit under which the magnetic axis is considered to be included</p>
+<h3 id="comment-block_25">Comment Block</h3>
+<p>\defgroup control_parameters ''control parameters''
+@{</p>
+<h3 id="comment-block_26">Comment Block</h3>
+<p>0/1 switch</p>
+<h3 id="comment-block_27">Comment Block</h3>
+<p>3D data output 0/1 switch</p>
+<h3 id="comment-block_28">Comment Block</h3>
+<p>bool control to test if we already write out mesh grid when ndata3d==1</p>
+<h3 id="comment-block_29">Comment Block</h3>
+<p>total perturbation field grids per toroidal plane</p>
+<h3 id="comment-block_30">Comment Block</h3>
+<p>largest index of perturbation field psi grid. Note psi grid range is [0,mpsi]</p>
+<h3 id="comment-block_31">Comment Block</h3>
+<p>perturbation field theta grid number on eq_flux surface. theta grid on other flux surfaces are rescaled according local ion temperature.</p>
+<h3 id="comment-block_32">Comment Block</h3>
+<p>perturbation field toroidal cross-section number</p>
+<h3 id="comment-block_33">Comment Block</h3>
+<p>number of included particle species</p>
+<h3 id="comment-block_34">Comment Block</h3>
+<p>current time step</p>
+<h3 id="comment-block_35">Comment Block</h3>
+<p>time history diagnostic frequency (in time steps)</p>
+<h3 id="comment-block_36">Comment Block</h3>
+<p>total snapshot number (spatial diagnostic and restart points)</p>
+<h3 id="comment-block_37">Comment Block</h3>
+<p>total simulation ion time step</p>
+<h3 id="comment-block_38">Comment Block</h3>
+<p>accumulated diagnostic steps read from restart history</p>
+<h3 id="comment-block_39">Comment Block</h3>
+<p>equilibrium flux index</p>
+<h3 id="comment-block_40">Comment Block</h3>
+<h1 id="zonal-component-solver-control-parameters">zonal component solver control parameters</h1>
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>no zonal phi</td>
+</tr>
+<tr>
+<td>1</td>
+<td>general geometry zonal phi solver</td>
+</tr>
+<tr>
+<td>2</td>
+<td>zonal phi solver for concentric flux surfaces</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comment-block_41">Comment Block</h3>
+<p>radial boundary coundition shape
+value | meaning
+----- | -------
+0     | no BC decay
+1     | linear decay
+2     | Gaussian decay</p>
+<h3 id="comment-block_42">Comment Block</h3>
+<p>on/off switch on drive radial BC
+value | meaning
+----- | -------
+0     | no decay in drive
+1     | apply radial decay on drive</p>
+<h3 id="comment-block_43">Comment Block</h3>
+<p>on/off switch on field radial BC
+value | meaning
+----- | -------
+0     | no decay in field
+1     | apply radial decay on field</p>
+<h3 id="comment-block_44">Comment Block</h3>
+<p>on/off switch on particle weight radial BC
+value | meaning
+----- | -------
+0     | no decay in particle weight
+1     | apply radial decay on particle weight</p>
+<h3 id="comment-block_45">Comment Block</h3>
+<p>on/off switch on equilibrium RMP field
+value | meaning
+----- | -------
+0     | no decay in equilibrium RMP field
+1     | apply radial decay on all equilibrium RMP field terms</p>
+<h3 id="comment-block_46">Comment Block</h3>
+<p>radial boundary width (number of grids)</p>
+<h3 id="comment-block_47">Comment Block</h3>
+<p>assymetric radial boundary width (near upper radial boundary)
+value | meaning
+----- | -------
+0     | symmetric radial boundary, use nbound value</p>
+<blockquote>
+<p>0    | assymmetric, specifies upper boundary layer width</p>
+</blockquote>
+<h3 id="comment-block_48">Comment Block</h3>
+<p>Flux surface on which the m=0 harmonic is fixed for the inner flux surfaces</p>
+<h3 id="comment-block_49">Comment Block</h3>
+<p>run ID. 0 for fresh run, &gt;1 for restart runs</p>
+<h3 id="comment-block_50">Comment Block</h3>
+<p>Runge-Kutta step counter</p>
+<h3 id="comment-block_51">Comment Block</h3>
+<p>diagnostic flag, 0 means it's diagnostic time</p>
+<h3 id="comment-block_52">Comment Block</h3>
+<p>thermal electron sub-steps within 1st ion RK step. Note that for second ion RK step, 2*ncyclee electron sub-steps are used.</p>
+<h3 id="comment-block_53">Comment Block</h3>
+<p>sub-cycle for fast electrons, similar to ncyclee</p>
+<h3 id="comment-block_54">Comment Block</h3>
+<p>theta and zeta grid number used for diagnostics and mode
+filtering</p>
+<h3 id="comment-block_55">Comment Block</h3>
+<p>total electron recursive loop number in hybrid model</p>
+<h3 id="comment-block_56">Comment Block</h3>
+<p>current electron recursive loop</p>
+<h3 id="comment-block_57">Comment Block</h3>
+<p>ES/EM control, 0/1 switch</p>
+<h3 id="comment-block_58">Comment Block</h3>
+<p>Linear/NL control, 0/1 switch</p>
+<h3 id="comment-block_59">Comment Block</h3>
+<p>mode filtering control.
+value   | meaning
+------- | -------
+0       | keep all modes
+1       | select n-mode in setup.F90
+2       | select n &amp; m mode</p>
+<blockquote>
+<p>2      | select n&amp;m mode and \f$ k_\parallel \ll k_\perp \f$</p>
+</blockquote>
+<h3 id="comment-block_60">Comment Block</h3>
+<p>equilibrium input type
+value | meaning
+----- | --------
+0     | analytic
+1     | EFIT
+2     | VMEC
+3     | M3DC1</p>
+<h3 id="comment-block_61">Comment Block</h3>
+<p>radial grids for FokkerPlanck collision</p>
+<h3 id="comment-block_62">Comment Block</h3>
+<p>poloidal grids for FokkerPlanck collision</p>
+<h3 id="comment-block_63">Comment Block</h3>
+<p>toroidal grids for FokkerPlanck collision. 1 or &gt;9: normal;</p>
+<h3 id="comment-block_64">Comment Block</h3>
+<p>Inclusion of a finite equilibrium current</p>
+<h3 id="comment-block_65">Comment Block</h3>
+<p>Enforcing pressure balance</p>
+<h3 id="comment-block_66">Comment Block</h3>
+<p>spdata file with un-normalised total pressure</p>
+<h3 id="comment-block_67">Comment Block</h3>
+<p>On-axis total pressure, when not contained in spdata</p>
+<h3 id="comment-block_68">Comment Block</h3>
+<p>Coefficient for the first injection energy of the slowing down pdf</p>
+<h3 id="comment-block_69">Comment Block</h3>
+<p>Coefficient for the second injection energy of the slowing down pdf</p>
+<h3 id="comment-block_70">Comment Block</h3>
+<p>Coefficient for the third injection energy of the slowing down pdf</p>
+<h3 id="comment-block_71">Comment Block</h3>
+<p>Initialize beam particles with vpara&gt;0</p>
+<h3 id="comment-block_72">Comment Block</h3>
+<p>Initialize beam particles with vpara&lt;0</p>
+<h3 id="comment-block_73">Comment Block</h3>
+<p>toroidal magnetic field and current relation, viewing from
+zeta=0 plane
+value | meaning
+----- | -------
+0     | B out, I out
+1     | B in, I out
+2     | B in, I in
+3     | B out, I in</p>
+<h3 id="comment-block_74">Comment Block</h3>
+<p>total number of information slots for each thermal ion marker</p>
+<h3 id="comment-block_75">Comment Block</h3>
+<p>information slots number for fast ion marker</p>
+<h3 id="comment-block_76">Comment Block</h3>
+<p>information slots number for fast electron marker</p>
+<h3 id="comment-block_77">Comment Block</h3>
+<p>information slots number for thermal electron marker</p>
+<h3 id="comment-block_78">Comment Block</h3>
+<p>transition region between FD and exterpolation to origin with linear boundary condition</p>
+<h3 id="comment-block_79">Comment Block</h3>
+<p>igrid(mpsilow)</p>
+<h3 id="comment-block_80">Comment Block</h3>
+<p>mpsi-1</p>
+<h3 id="comment-block_81">Comment Block</h3>
+<p>igrid(mpsihigh)</p>
+<h3 id="comment-block_82">Comment Block</h3>
+<p>boundary condition formula
+value | meaning
+----- | -------
+0     | fixed zero boundary
+1     | linear inner boundary</p>
+<h3 id="comment-block_83">Comment Block</h3>
+<p>0     | fixed zero boundary
+1     | m=0 constant boundary</p>
+<h3 id="comment-block_84">Comment Block</h3>
+<p>analytic equilibrium field model
+value | meaning
+----- | -------
+0     | s-alpha like (cyclone)
+1     | first order (in r/R_0) model with parallel current</p>
+<h3 id="comment-block_85">Comment Block</h3>
+<p>Fluid model valid only when iload=0.
+1     | single fluid model (E_||=0, nhybrid=0, fload=0, feload=0)
+2     | two fluid model (T_i=0 &amp; \delta u_i=0)</p>
+<h3 id="comment-block_86">Comment Block</h3>
+<p>Related to Poisson Eq. matrix element, 0/1 switch</p>
+<h3 id="comment-block_87">Comment Block</h3>
+<p>1: add diagonal term for poisson operator</p>
+<h3 id="comment-block_88">Comment Block</h3>
+<p>1/0 switch for using external antennas
+value | meaning
+----- | -------
+0     | no antenna
+1     | use antenna defined in antenna.F90</p>
+<h3 id="comment-block_89">Comment Block</h3>
+<p>1/0 switch for writing out Alfv\'en Continuum (ALCON) data
+value | meaning
+----- | -------
+0     | do not write
+1     | call alcon provided other conditions are met</p>
+<h3 id="comment-block_90">Comment Block</h3>
+<p>toroidal mode numbers of the chosen modes</p>
+<h3 id="comment-block_91">Comment Block</h3>
+<p>poloidal mode numbers of the chosen modes</p>
+<h3 id="comment-block_92">Comment Block</h3>
+<p>analytic island option, 0/1 switch</p>
+<h3 id="comment-block_93">Comment Block</h3>
+<p>finite element/finite difference, 1/0 switch</p>
+<h3 id="comment-block_94">Comment Block</h3>
+<p>total grid points minus poloidal BC</p>
+<h3 id="comment-block_95">Comment Block</h3>
+<p>the number of triangles for system</p>
+<h3 id="comment-block_96">Comment Block</h3>
+<p>number of parallel and perpendicular smoothing times</p>
+<h3 id="comment-block_97">Comment Block</h3>
+<p>input equilibrium values standard
+value | meaning
+----- | -------
+0     | on-axis values
+1     | on eq_flux values
+integer :: inorm
+0/1 switch for restoration of temperature and density profile in nonlinear
+iload=1 simulations
+value | meaning
+----- | -------
+0     | no profile restoration, nonlinear evolution will flatten the gradients
+1     | profile restoration when iload=1 &amp;&amp; nonlinear==1</p>
+<h3 id="comment-block_98">Comment Block</h3>
+<p>equilibrium rotation control
+equilibrium radial electric field, 0/1 switch</p>
+<h3 id="comment-block_99">Comment Block</h3>
+<p>equilibrium toroidal rotation frequency
+value | meaning
+----- | -------
+0     | None
+1     | Calculate via forcebalance using thermal ion pressure and Er
+2     | Load from profile.dat</p>
+<h3 id="comment-block_100">Comment Block</h3>
+<p>delta B_para model, 0/1 switch</p>
+<h3 id="comment-block_101">Comment Block</h3>
+<p>conservative scheme model with tearing mode physics, 0/1 switch</p>
+<h3 id="comment-block_102">Comment Block</h3>
+<p>total poisson solver control (solve zonal and non-zonal parts together), 0/1 switch, only for electromagnetic</p>
+<h3 id="comment-block_103">Comment Block</h3>
+<p>partial torus period</p>
+<h3 id="comment-block_104">Comment Block</h3>
+<p>poincare mode control
+value | meaning
+0     | normal mode
+1     | poincare mode</p>
+<h3 id="comment-block_105">Comment Block</h3>
+<p>neoclassical tearing mode</p>
+<h3 id="comment-block_106">Comment Block</h3>
+<h1 id="of-delta-pressure-iteration">of delta pressure iteration</h1>
+<h3 id="comment-block_107">Comment Block</h3>
+<p>parallel non-linearity</p>
+<h3 id="comment-block_108">Comment Block</h3>
+<p>lower simulation boundary in psi</p>
+<h3 id="comment-block_109">Comment Block</h3>
+<p>upper simulation boundary in psi</p>
+<h3 id="comment-block_110">Comment Block</h3>
+<p>Inner boundary minor radial value</p>
+<h3 id="comment-block_111">Comment Block</h3>
+<p>Outer boundary minor radial value</p>
+<h3 id="comment-block_112">Comment Block</h3>
+<p>ratio of a circle's circumference to its diameter, \f$ \pi \f$</p>
+<h3 id="comment-block_113">Comment Block</h3>
+<p>\f$ 2\pi \f$</p>
+<h3 id="comment-block_114">Comment Block</h3>
+<p>\f$ 1/2\pi \f$</p>
+<h3 id="comment-block_115">Comment Block</h3>
+<p>simulation time step in unit \f$ R_0/C_s \f$, where \f$ R_0 \f$ is the
+major radius, and \f$ C_s \equiv \sqrt{T_e/m_i} \f$ is the ion acoustic
+speed</p>
+<h3 id="comment-block_116">Comment Block</h3>
+<p>GTC length unit, equals \f$ R_0 \f$</p>
+<h3 id="comment-block_117">Comment Block</h3>
+<p>GTC time unit, equals \f$ 1/\omega_{ci} \f$,
+where \f$ \omega_{ci} \equiv eB_0/m_i \f$ is the ion cyclotron frequency</p>
+<h3 id="comment-block_118">Comment Block</h3>
+<p>ion gyro radius \f$ \rho_0 \equiv v_{thi}/\omega_{ci} \f$,
+where \f$ v_{thi} \equiv \sqrt{T_i/m_i} \f$ is the ion thermal speed</p>
+<h3 id="comment-block_119">Comment Block</h3>
+<p>Maxwellian int  function used in the Fokker-Planck collisions.
+Values are read from an exernal file "maxwell.dat"
+For more details see Lin PoP95</p>
+<h3 id="comment-block_120">Comment Block</h3>
+<p>major radius in centi-meter</p>
+<h3 id="comment-block_121">Comment Block</h3>
+<p>on-axis magnetic field strength in Gauss</p>
+<h3 id="comment-block_122">Comment Block</h3>
+<p>input electron temperature in eV</p>
+<h3 id="comment-block_123">Comment Block</h3>
+<p>input electron density in 1/cm^3</p>
+<h3 id="comment-block_124">Comment Block</h3>
+<p>Parallel hyperviscosity</p>
+<h3 id="comment-block_125">Comment Block</h3>
+<p>Perpendicular hyperviscosity</p>
+<h3 id="comment-block_126">Comment Block</h3>
+<p>! resistivity, unit: Ohm*m. negative value/others:  without/with tearing mode</p>
+<h3 id="comment-block_127">Comment Block</h3>
+<p>perpendicular thermal conductivities, unit: m^2/s</p>
+<h3 id="comment-block_128">Comment Block</h3>
+<p>parallel thermal conductivities, unit: m^2/s</p>
+<h3 id="comment-block_129">Comment Block</h3>
+<p>toroidal boundary of the task</p>
+<h3 id="comment-block_130">Comment Block</h3>
+<p>@}</p>
+<h3 id="comment-block_131">Comment Block</h3>
+<p>\defgroup decomposition_parameters ''MPI toroidal and particle decomposion''
+@{</p>
+<h3 id="comment-block_132">Comment Block</h3>
+<p>current MPI process ID</p>
+<h3 id="comment-block_133">Comment Block</h3>
+<p>total MPI processes number</p>
+<h3 id="comment-block_134">Comment Block</h3>
+<p>MPI processes number within a single toroidal domain</p>
+<h3 id="comment-block_135">Comment Block</h3>
+<p>toroidal communicator, for MPI communications <strong>between</strong> toroidal domains with
+the same particle domain rank</p>
+<h3 id="comment-block_136">Comment Block</h3>
+<p>particle domain communicator, for communications between particle domains <strong>within</strong> the same
+toroidal domain</p>
+<h3 id="comment-block_137">Comment Block</h3>
+<p>size of the current particle domain world, should equal npartdom</p>
+<h3 id="comment-block_138">Comment Block</h3>
+<p>current rank in particle domain world, should equal
+particle_domain_location</p>
+<h3 id="comment-block_139">Comment Block</h3>
+<p>size of the current toroidal domain world, should equal mtoroidal</p>
+<h3 id="comment-block_140">Comment Block</h3>
+<p>current rank in toroidal domain world, should equal
+toroidal_domain_location</p>
+<h3 id="comment-block_141">Comment Block</h3>
+<p>toroidal rank of the MPI corresponds to myrank_toroidal-1, periodicity is
+considered</p>
+<h3 id="comment-block_142">Comment Block</h3>
+<p>toroidal rank corresponds to myrank_toroidal+1</p>
+<h3 id="comment-block_143">Comment Block</h3>
+<p>identifier for current PE's toroidal domain</p>
+<h3 id="comment-block_144">Comment Block</h3>
+<p>identifier for current PE's particle domain</p>
+<h3 id="comment-block_145">Comment Block</h3>
+<p>total OpenMP threads number per MPI process</p>
+<h3 id="comment-block_146">Comment Block</h3>
+<p>@}</p>
+<h3 id="comment-block_147">Comment Block</h3>
+<p>\defgroup restart_parameters ''restart parameters''
+@{</p>
+<h3 id="comment-block_148">Comment Block</h3>
+<p>restart rolling index</p>
+<h3 id="comment-block_149">Comment Block</h3>
+<p>FileExit IO unit number</p>
+<h3 id="comment-block_150">Comment Block</h3>
+<p>path to restart folder 1</p>
+<h3 id="comment-block_151">Comment Block</h3>
+<p>path to restart folder 2</p>
+<h3 id="comment-block_152">Comment Block</h3>
+<p>@}
+keep changes made by subroutines</p>
+<h3 id="comment-block_153">Comment Block</h3>
+<p>equilibrium field evaluation related quantities
+equilibrium fields are represented with quadratic spline functions on an
+equilibrium mesh.
+\sa spline_function</p>
+<h3 id="comment-block_154">Comment Block</h3>
+<p>spline grid points in psi</p>
+<h3 id="comment-block_155">Comment Block</h3>
+<p>spline grid points in theta (including the duplicate at 0 and 2pi)</p>
+<h3 id="comment-block_156">Comment Block</h3>
+<p>total spline grid points in zeta (including duplicates at 0 and 2pi)</p>
+<h3 id="comment-block_157">Comment Block</h3>
+<p>number of spline sections in zeta per toroidal section of simulation planes</p>
+<h3 id="comment-block_158">Comment Block</h3>
+<p>number of toroidal modes used in 3D field (VMEC or M3DC1)</p>
+<h3 id="comment-block_159">Comment Block</h3>
+<p>spline array dimension for 3D equilibrium</p>
+<h3 id="comment-block_160">Comment Block</h3>
+<p>spline array diemnsion for 2D equilibrium</p>
+<h3 id="comment-block_161">Comment Block</h3>
+<p>\f$ \psi_p \f$ at machine wall</p>
+<h3 id="comment-block_162">Comment Block</h3>
+<p>\f$ \psi_p \f$ at separatrix</p>
+<h3 id="comment-block_163">Comment Block</h3>
+<p>\f$ \Delta \psi_p \f$ used for spline</p>
+<h3 id="comment-block_164">Comment Block</h3>
+<p>\f$ \Delta \theta \f$ used for spline</p>
+<h3 id="comment-block_165">Comment Block</h3>
+<p>\f$ \Delta \zeta \f$ used for spline</p>
+<h3 id="comment-block_166">Comment Block</h3>
+<p>\f$ \Delta rg \f$ used for spline</p>
+<h3 id="comment-block_167">Comment Block</h3>
+<p>\deprecated
+\f$ \Delta \psi_t \f$ used for spline</p>
+<h3 id="comment-block_168">Comment Block</h3>
+<p>\f$ 1/\Delta \psi_p \f$</p>
+<h3 id="comment-block_169">Comment Block</h3>
+<p>\f$ 1/\Delta \theta \f$</p>
+<h3 id="comment-block_170">Comment Block</h3>
+<p>\f$ 1/\Delta \zeta \f$</p>
+<h3 id="comment-block_171">Comment Block</h3>
+<p>\f$ 1/\Delta rg \f$</p>
+<h3 id="comment-block_172">Comment Block</h3>
+<p>\f$ 1/\Delta \psi_t \f$</p>
+<h3 id="comment-block_173">Comment Block</h3>
+<p>\defgroup 1d_spline_arrays ''1D spline coefficients''
+@{</p>
+<h3 id="comment-block_174">Comment Block</h3>
+<p>UNKNOWN profile</p>
+<h3 id="comment-block_175">Comment Block</h3>
+<p>UNKNOWN profile</p>
+<h3 id="comment-block_176">Comment Block</h3>
+<p>UNKNOWN profile</p>
+<h3 id="comment-block_177">Comment Block</h3>
+<p>equilibrium radial E field on perturbation grids</p>
+<h3 id="comment-block_178">Comment Block</h3>
+<p>safety factor spline coefficients</p>
+<h3 id="comment-block_179">Comment Block</h3>
+<p>covariant toroidal B field spline coefficients</p>
+<h3 id="comment-block_180">Comment Block</h3>
+<p>pressure spline coefficients</p>
+<h3 id="comment-block_181">Comment Block</h3>
+<p>minor radius spline coefficients</p>
+<h3 id="comment-block_182">Comment Block</h3>
+<p>toroidal flux spline coefficients</p>
+<h3 id="comment-block_183">Comment Block</h3>
+<p>electron density spline coefficients</p>
+<h3 id="comment-block_184">Comment Block</h3>
+<p>electron temperature spline coefficients</p>
+<h3 id="comment-block_185">Comment Block</h3>
+<p>ion temperature spline coefficients</p>
+<h3 id="comment-block_186">Comment Block</h3>
+<p>ion density spline coefficients</p>
+<h3 id="comment-block_187">Comment Block</h3>
+<p>fast ion temperature spline coefficients</p>
+<h3 id="comment-block_188">Comment Block</h3>
+<p>fast ion density spline coefficients</p>
+<h3 id="comment-block_189">Comment Block</h3>
+<p>fast electron temperature spline coefficients</p>
+<h3 id="comment-block_190">Comment Block</h3>
+<p>fast electron density spline coefficients</p>
+<h3 id="comment-block_191">Comment Block</h3>
+<p>effective charge profile spline coefficients</p>
+<h3 id="comment-block_192">Comment Block</h3>
+<p>plasma rotation profile spline coefficients</p>
+<h3 id="comment-block_193">Comment Block</h3>
+<p>radial electric field spline coefficients</p>
+<h3 id="comment-block_194">Comment Block</h3>
+<p>EFIT consistent pressure profile</p>
+<h3 id="comment-block_195">Comment Block</h3>
+<p>On-axis beta from pefit and b0</p>
+<h3 id="comment-block_196">Comment Block</h3>
+<p>rg(psi_p) spline coefficients</p>
+<h3 id="comment-block_197">Comment Block</h3>
+<p>psi_p(rg) spline coefficients</p>
+<h3 id="comment-block_198">Comment Block</h3>
+<p>psi_p(psi_t) spline coefficients</p>
+<h3 id="comment-block_199">Comment Block</h3>
+<p>covariant poloidal B field spline coefficients</p>
+<h3 id="comment-block_200">Comment Block</h3>
+<p>X-Z coordinates for all perturbation grids</p>
+<h3 id="comment-block_201">Comment Block</h3>
+<p>@}</p>
+<h3 id="comment-block_202">Comment Block</h3>
+<p>\defgroup 2d_spline_arrays ''2D spline coefficients''
+@{</p>
+<h3 id="comment-block_203">Comment Block</h3>
+<p>B field magnitude \f$ B(\psi_p,\theta) \f$ spline</p>
+<h3 id="comment-block_204">Comment Block</h3>
+<p>Major radius \f$ X(\psi_p,\theta) \f$ spline</p>
+<h3 id="comment-block_205">Comment Block</h3>
+<p>vertical coordinate \f$ Z(\psi_p,\theta) \f$ spline</p>
+<h3 id="comment-block_206">Comment Block</h3>
+<p>difference between \f$ \zeta \f$ and \f$ \Phi \f$
+\f[
+\zeta = \Phi + \nu(\psi_p, \theta, \zeta)
+\f]</p>
+<h3 id="comment-block_207">Comment Block</h3>
+<p>B field magnitude \f$ B(\psi_p,\theta,\zeta) \f$ spline</p>
+<h3 id="comment-block_208">Comment Block</h3>
+<p>Major radius \f$ X(\psi_p,\theta,\zeta) \f$ spline</p>
+<h3 id="comment-block_209">Comment Block</h3>
+<p>vertical coordinate \f$ Z(\psi_p,\theta,\zeta) \f$ spline</p>
+<h3 id="comment-block_210">Comment Block</h3>
+<p>difference between \f$ \zeta \f$ and \f$ \Phi \f$
+\f[
+\zeta = \Phi + \nu(\psi_p, \theta, \zeta)
+\f]</p>
+<h3 id="comment-block_211">Comment Block</h3>
+<p>Jacobian obtained from Boozer expression
+\f[
+\mathcal{J} = (gq + I)/B^2
+\f]
+\sa m3dc1::check_Jacobian</p>
+<h3 id="comment-block_212">Comment Block</h3>
+<p>Jacobian obtained from metric tensor
+\f[
+\mathcal{J} = \frac{\partial (X,Z,\Phi)}{\partial (\psi_p,\theta,\zeta)}
+\f]
+\sa m3dc1::check_Jacobian</p>
+<h3 id="comment-block_213">Comment Block</h3>
+<p>Radial covariant compoennt of the B field in Boozer coordinate</p>
+<h3 id="comment-block_214">Comment Block</h3>
+<p>Parallel equilibrium current(J_||/B_0) computed from (\nabla\timesB_0)_{\parallel}</p>
+<h3 id="comment-block_215">Comment Block</h3>
+<p>Radial covariant compoennt of the B field in Boozer coordinate</p>
+<h3 id="comment-block_216">Comment Block</h3>
+<p>Parallel equilibrium current(J_||/B_0) computed from (\nabla\timesB_0)_{\parallel}</p>
+<h3 id="comment-block_217">Comment Block</h3>
+<p>used when reading spdata from EFIT and used to plot currenti
+eventually has to be deleted.
+toroidal plasma current, proportional to cpsi</p>
+<h3 id="comment-block_218">Comment Block</h3>
+<p>@}</p>
+<h3 id="comment-block_219">Comment Block</h3>
+<p>\defgroup 3d_spline_arrays ''3D spline coefficients''
+@{</p>
+<h3 id="comment-block_220">Comment Block</h3>
+<p>spline coefficients for equilibrium islands \f$ \alpha(\psi_p,\theta,\zeta) \f$
+\sa m3dc1::load_m3dc1_alpha</p>
+<h3 id="comment-block_221">Comment Block</h3>
+<p>additional scaling factor on read-in alpha</p>
+<h3 id="comment-block_222">Comment Block</h3>
+<p>@}
+$acc declare create(qpsi,gpsi,ropp,erpp,rgpsi,cpsi,&amp;
+$acc&amp;               bsp,xsp,mesher,alphasp)</p>
+<h3 id="comment-block_223">Comment Block</h3>
+<p>gradient of alphaIs</p>
+<h3 id="comment-block_224">Comment Block</h3>
+<p>laplacian of \f$ \delta \phi^{ind} \f$</p>
+<h3 id="comment-block_225">Comment Block</h3>
+<p>time derivative of non-adiabatic vector potential \f$ \partial \delta A_{||}^{NA} \partial t \f$</p>
+<h3 id="comment-block_226">Comment Block</h3>
+<p>tapara_na used in the weight equaiton for particle push</p>
+<h3 id="comment-block_227">Comment Block</h3>
+<p>inductive potential for adiabatic vector potential</p>
+<h3 id="comment-block_228">Comment Block</h3>
+<p>total parallel electric field</p>
+<h3 id="comment-block_229">Comment Block</h3>
+<p>non-adiabatic vector potential including tearing parity</p>
+<h3 id="comment-block_230">Comment Block</h3>
+<p>initial value of non-adiabatic apara_na</p>
+<h3 id="comment-block_231">Comment Block</h3>
+<p>Smoothed apara_na for push time-dependent field equation and particle</p>
+<h3 id="comment-block_232">Comment Block</h3>
+<p>gradient of inductive potential</p>
+<h3 id="comment-block_233">Comment Block</h3>
+<p>gradient of non-adiabatic apara_na</p>
+<h3 id="comment-block_234">Comment Block</h3>
+<p>particle related arrays delaration.</p>
+<p>All the particle arrays are defined on current MPI</p>
+<h3 id="comment-block_235">Comment Block</h3>
+<p>particle diagnostics: # of quantities per species in history.out</p>
+<h3 id="comment-block_236">Comment Block</h3>
+<p>particle diagnostics: # of quantities per species in data1d.out</p>
+<h3 id="comment-block_237">Comment Block</h3>
+<p>maximum value among mimax,memax,mfmax and mfemax</p>
+<h3 id="comment-block_238">Comment Block</h3>
+<p>\defgroup electron_array ''Thermal Electron Arrays''
+@{</p>
+<h3 id="comment-block_239">Comment Block</h3>
+<p>electron particle number</p>
+<h3 id="comment-block_240">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_241">Comment Block</h3>
+<p>electron particle array size</p>
+<h3 id="comment-block_242">Comment Block</h3>
+<p>electron gyro-averaging points</p>
+<h3 id="comment-block_243">Comment Block</h3>
+<p>electron load scheme
+value | meaning
+----- | -------
+0     | no kinetic particle
+1     | uniform profiles
+2     | real profiles, marker uniform in space, Maxwellian in velocity
+3     | marker proportional to real distribution</p>
+<h3 id="comment-block_244">Comment Block</h3>
+<p>electron pitch angle filtering scheme
+value | meaning
+----- | -------
+1     | load trapped particles only
+not 1 | load all particles</p>
+<h3 id="comment-block_245">Comment Block</h3>
+<p>electron collision scheme
+value | meaning
+----- | -------
+0     | no collision</p>
+<blockquote>
+<p>0    | with collision</p>
+</blockquote>
+<h3 id="comment-block_246">Comment Block</h3>
+<p>electron charge</p>
+<h3 id="comment-block_247">Comment Block</h3>
+<p>electron mass</p>
+<h3 id="comment-block_248">Comment Block</h3>
+<p>electron beta</p>
+<h3 id="comment-block_249">Comment Block</h3>
+<p>electron-electron collison time</p>
+<h3 id="comment-block_250">Comment Block</h3>
+<p>electron-ion collision time</p>
+<h3 id="comment-block_251">Comment Block</h3>
+<p>electron time diagnostic array
+\n See also: diagnosis, PushParticle</p>
+<h3 id="comment-block_252">Comment Block</h3>
+<p>electron location array,
+index of the lower theta grid on inner flux surface</p>
+<h3 id="comment-block_253">Comment Block</h3>
+<p>electron location array,
+index of the lower theta grid on outer flux surface</p>
+<h3 id="comment-block_254">Comment Block</h3>
+<p>electron location array,
+linear interpolation weight in zeta</p>
+<h3 id="comment-block_255">Comment Block</h3>
+<p>electron temperature profile on simulation psi grid</p>
+<h3 id="comment-block_256">Comment Block</h3>
+<p>electron density profile on simulation psi grid</p>
+<h3 id="comment-block_257">Comment Block</h3>
+<p>electron \f$ \kappa_{ne} \f$ profile on simulation psi grid
+\f[
+\kappa_{ne} \equiv -\frac{1}{n_e} \frac{d n_e}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_258">Comment Block</h3>
+<p>electron \f$ \kappa_{te} \f$ profile on simulation psi grid
+\f[
+\kappa_{te} \equiv -\frac{1}{T_e} \frac{d T_e}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_259">Comment Block</h3>
+<p>(kapani-kapati)*meshti/meshni</p>
+<h3 id="comment-block_260">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_261">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_262">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_263">Comment Block</h3>
+<p>electron particle information array. \n
+The first index indicates the different information for each marker. \n
+Their meanings are:
+index | meaning
+----- | ----------
+1     | psi
+2     | theta
+3     | zeta
+4     | rho_para
+5     | weight
+6     | sqrt(mu)
+7     | f/g
+8,9   | particle tracking labels</p>
+<h3 id="comment-block_264">Comment Block</h3>
+<p>temporary container for initial particle informations before each
+ion Runge-Kutta push. See zelectron for the format.</p>
+<h3 id="comment-block_265">Comment Block</h3>
+<p>temporary container for initial particle informations before each
+electron sub Runge-Kutta push. See zelectron for the format.</p>
+<h3 id="comment-block_266">Comment Block</h3>
+<p>psi weight array used for perturbed field evaluation at particle location.
+weight for outer flux surface.
+\n Shape: (ngyroe,me)</p>
+<h3 id="comment-block_267">Comment Block</h3>
+<p>theta weight on upper theta grid point on inner flux surface.
+\n Shape: (ngyroe,me)</p>
+<h3 id="comment-block_268">Comment Block</h3>
+<p>theta weight on upper theta grid point on outer flux surface.
+\n Shape: (ngyroe,me)</p>
+<h3 id="comment-block_269">Comment Block</h3>
+<p>electron number density on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that density is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_270">Comment Block</h3>
+<p>electron parallel flow field on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that flowe is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_271">Comment Block</h3>
+<p>1D diagnostic data for electron</p>
+<h3 id="comment-block_272">Comment Block</h3>
+<p>parallel non-adiabatic electron pressure</p>
+<h3 id="comment-block_273">Comment Block</h3>
+<p>perpendicular non-adiabatic electron pressure</p>
+<h3 id="comment-block_274">Comment Block</h3>
+<p>@}
+\f$ \frac{\partial \Phi_{eff}}{\partial t}\f$
+\n See hybrid_model documents for details</p>
+<h3 id="comment-block_275">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_276">Comment Block</h3>
+<p>\f$ \frac{\partial n_e}{\partial t}\f$
+\n See hybrid_model documents for details</p>
+<h3 id="comment-block_277">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_278">Comment Block</h3>
+<p>\f$ \frac{\partial \delta B_\parallel}{\partial t}\f$
+\n See bpara_model documents for details</p>
+<h3 id="comment-block_279">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_280">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_281">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_282">Comment Block</h3>
+<p>\defgroup ion_arrays ''Thermal Ion Arrays''
+@{
+themal ion (main ion)</p>
+<h3 id="comment-block_283">Comment Block</h3>
+<p>ion particle number</p>
+<h3 id="comment-block_284">Comment Block</h3>
+<p>ion particle array size</p>
+<h3 id="comment-block_285">Comment Block</h3>
+<p>ion gyro-averaging points</p>
+<h3 id="comment-block_286">Comment Block</h3>
+<p>fully kinetic simualtion flag</p>
+<h3 id="comment-block_287">Comment Block</h3>
+<p>ion load scheme
+value | meaning
+----- | -------
+0     | no kinetic particle
+1     | uniform profiles
+2     | real profiles, marker uniform in space, Maxwellian in velocity
+3     | marker proportional to real distribution
+4     | slowing-down distribution
+5     | Empty
+6     | Ring-like distribution
+7     | Empty
+8     | Analytical constant of motion distribution (to be implemented)
+9     | Numerical constant of motion distribution (to be implemented)
+1#    | fully kinetic, Boris push
+10#   | full f
+11#   | full f &amp; fully kinetic</p>
+<h3 id="comment-block_288">Comment Block</h3>
+<p>ion collision scheme
+value | meaning
+----- | -------
+0     | no collision</p>
+<blockquote>
+<p>0    | with collision</p>
+</blockquote>
+<h3 id="comment-block_289">Comment Block</h3>
+<p>ion charge</p>
+<h3 id="comment-block_290">Comment Block</h3>
+<p>ion mass</p>
+<h3 id="comment-block_291">Comment Block</h3>
+<p>ion-ion collision time</p>
+<h3 id="comment-block_292">Comment Block</h3>
+<p>ion time diagnostic array
+\n See also: diagnosis, PushParticle</p>
+<h3 id="comment-block_293">Comment Block</h3>
+<p>ion location array,
+index of the lower theta grid on inner flux surface</p>
+<h3 id="comment-block_294">Comment Block</h3>
+<p>index of the lower theta grid on outer flux surface</p>
+<h3 id="comment-block_295">Comment Block</h3>
+<p>linear interpolation weight in zeta</p>
+<h3 id="comment-block_296">Comment Block</h3>
+<p>ion temperature profile on simulation psi grid</p>
+<h3 id="comment-block_297">Comment Block</h3>
+<p>ion density profile on simulation psi grid</p>
+<h3 id="comment-block_298">Comment Block</h3>
+<p>ion \f$ \kappa_{ni} \f$ profile on simulation psi grid
+\f[
+\kappa_{ni} \equiv -\frac{1}{n_i} \frac{d n_i}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_299">Comment Block</h3>
+<p>ion \f$ \kappa_{ti} \f$ profile on simulation psi grid
+\f[
+\kappa_{ti} \equiv -\frac{1}{T_i} \frac{d T_i}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_300">Comment Block</h3>
+<p>Jacobian (flux surface average) on psi grid</p>
+<h3 id="comment-block_301">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_302">Comment Block</h3>
+<p>ion number density (flux surface average)</p>
+<h3 id="comment-block_303">Comment Block</h3>
+<p>gk: ion parallel flow field (flux surface average)
+fk: ion psi flow field (flux surface average)</p>
+<h3 id="comment-block_304">Comment Block</h3>
+<p>fk: ion theta flow field (flux surface average)</p>
+<h3 id="comment-block_305">Comment Block</h3>
+<p>fk: ion zeta flow field (flux surface average)</p>
+<h3 id="comment-block_306">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_307">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_308">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_309">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_310">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_311">Comment Block</h3>
+<p>ion particle information array. \n
+The first index indicates the different information for each marker. \n
+Their meanings are:
+index |                    meaning
+----- | -------gk--------        | ----fk------
+1     | psi                      | psi
+2     | theta                    | theta
+3     | zeta                     | zeta
+4     | rho_para                 | psi_dot
+5     | weight                   | weight
+6     | sqrt(mu)                 | theta_dot
+7     | f/g                      | f/g
+8     | particle tracking label  | zeta_dot
+9     | particle tracking label  | particle tracking label
+10    | NONE                     | particle tracking label</p>
+<h3 id="comment-block_312">Comment Block</h3>
+<p>temporary container for initial particle informations before each
+ion Runge-Kutta push. See zion for the format.</p>
+<h3 id="comment-block_313">Comment Block</h3>
+<p>psi weight array used for perturbed field evaluation at particle location.
+weight for outer flux surface.
+\n Shape: (ngyroi,mi)</p>
+<h3 id="comment-block_314">Comment Block</h3>
+<p>theta weight on upper theta grid point on inner flux surface.
+\n Shape: (ngyroi,mi)</p>
+<h3 id="comment-block_315">Comment Block</h3>
+<p>theta weight on upper theta grid point on outer flux surface.
+\n Shape: (ngyroi,mi)</p>
+<h3 id="comment-block_316">Comment Block</h3>
+<p>ion number density on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that density is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_317">Comment Block</h3>
+<p>ion parallel flow field on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that flowi is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_318">Comment Block</h3>
+<p>ion poloidal flow field on grid. \n</p>
+<h3 id="comment-block_319">Comment Block</h3>
+<p>ion toroidal flow field on grid. \n</p>
+<h3 id="comment-block_320">Comment Block</h3>
+<p>1D diagnostic data for ion</p>
+<h3 id="comment-block_321">Comment Block</h3>
+<p>delta P_i\perp/meshni</p>
+<h3 id="comment-block_322">Comment Block</h3>
+<p>delta P_f\perp/meshnf</p>
+<h3 id="comment-block_323">Comment Block</h3>
+<p>delta P_fe\perp/meshnf</p>
+<h3 id="comment-block_324">Comment Block</h3>
+<p>@}
+$acc declare create(diagion,jtion0,jtion1,&amp;
+$acc&amp;               wzion,meshti,meshni,kapani,kapati,rdtemi,rddeni,&amp;
+$acc&amp;               zion,zion0,wpion,wtion0,wtion1,densityi,flowi,flowti,flowzi,pressureiperp,data1di,&amp;
+$acc&amp;               zonali,zonalci,zonalcti,zonalczi,pmarki,jacobianpsi,markeri)</p>
+<h3 id="comment-block_325">Comment Block</h3>
+<p>\defgroup fast_ion_arrays ''Fast Ion Arrays''
+@{
+fast ion</p>
+<h3 id="comment-block_326">Comment Block</h3>
+<p>fast ion particle number</p>
+<h3 id="comment-block_327">Comment Block</h3>
+<p>fast ion particle array size</p>
+<h3 id="comment-block_328">Comment Block</h3>
+<p>fast ion gyro-averaging points</p>
+<h3 id="comment-block_329">Comment Block</h3>
+<p>fully kinetic simualtion flag</p>
+<h3 id="comment-block_330">Comment Block</h3>
+<p>fast ion load scheme
+value | meaning
+----- | -------
+0     | no kinetic particle
+1     | uniform profiles
+2     | real profiles, marker uniform in space, Maxwellian in velocity
+3     | marker proportional to real distribution
+4     | slowing-down distribution
+5     | Empty
+6     | Ring-like distribution
+7     | Empty
+8     | Analytical constant of motion distribution (to be implemented)
+9     | Numerical constant of motion distribution (to be implemented)
+1#    | fully kinetic, Boris push
+10#   | full f
+11#   | full f &amp; fully kinetic</p>
+<h3 id="comment-block_331">Comment Block</h3>
+<p>fast ion charge</p>
+<h3 id="comment-block_332">Comment Block</h3>
+<p>fast ion mass</p>
+<h3 id="comment-block_333">Comment Block</h3>
+<p>fast ion slowing down distribution parameters
+UNKNOWN</p>
+<h3 id="comment-block_334">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_335">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_336">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_337">Comment Block</h3>
+<p>fast ion time diagnostic array
+\n See also: diagnosis, PushParticle</p>
+<h3 id="comment-block_338">Comment Block</h3>
+<p>fast ion location array,
+index of the lower theta grid on inner flux surface</p>
+<h3 id="comment-block_339">Comment Block</h3>
+<p>index of the lower theta grid on outer flux surface</p>
+<h3 id="comment-block_340">Comment Block</h3>
+<p>linear interpolation weight in zeta</p>
+<h3 id="comment-block_341">Comment Block</h3>
+<p>fast ion temperature profile on simulation psi grid</p>
+<h3 id="comment-block_342">Comment Block</h3>
+<p>fast ion density profile on simulation psi grid</p>
+<h3 id="comment-block_343">Comment Block</h3>
+<p>fast ion \f$ \kappa_{nf} \f$ profile on simulation psi grid
+\f[
+\kappa_{nf} \equiv -\frac{1}{n_f} \frac{d n_f}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_344">Comment Block</h3>
+<p>fast ion \f$ \kappa_{tf} \f$ profile on simulation psi grid
+\f[
+\kappa_{tf} \equiv -\frac{1}{T_f} \frac{d T_f}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_345">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_346">Comment Block</h3>
+<p>fast ion number density (flux surface average)</p>
+<h3 id="comment-block_347">Comment Block</h3>
+<p>gk: fast ion parallel flow field (flux surface average)
+fk: fast ion psi flow field (flux surface average)</p>
+<h3 id="comment-block_348">Comment Block</h3>
+<p>fk: fast ion theta flow field (flux surface average)</p>
+<h3 id="comment-block_349">Comment Block</h3>
+<p>fk: fast ion zeta flow field (flux surface average)</p>
+<h3 id="comment-block_350">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_351">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_352">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_353">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_354">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_355">Comment Block</h3>
+<p>fast ion particle information array. \n
+The first index indicates the different information for each marker. \n
+Their meanings are:
+index | meaning
+----- | ----------
+1     | psi
+2     | theta
+3     | zeta
+4     | rho_para
+5     | weight
+6     | sqrt(mu)
+7     | f/g
+8,9   | particle tracking labels</p>
+<h3 id="comment-block_356">Comment Block</h3>
+<p>temporary container for initial particle informations before each
+ion Runge-Kutta push. See zfast for the format.</p>
+<h3 id="comment-block_357">Comment Block</h3>
+<p>psi weight array used for perturbed field evaluation at particle location.
+weight for outer flux surface.
+\n Shape: (ngyrof,mf)</p>
+<h3 id="comment-block_358">Comment Block</h3>
+<p>theta weight on upper theta grid point on inner flux surface.
+\n Shape: (ngyrof,mf)</p>
+<h3 id="comment-block_359">Comment Block</h3>
+<p>theta weight on upper theta grid point on outer flux surface.
+\n Shape: (ngyrof,mf)</p>
+<h3 id="comment-block_360">Comment Block</h3>
+<p>fast ion number density on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that density is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_361">Comment Block</h3>
+<p>fast ion parallel flow field on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that flow is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.
+gk: ion parallel flow field on grid.
+fk: ion radial flow field on grid.</p>
+<h3 id="comment-block_362">Comment Block</h3>
+<p>ion poloidal flow field on grid.</p>
+<h3 id="comment-block_363">Comment Block</h3>
+<p>ion toroidal flow field on grid.</p>
+<h3 id="comment-block_364">Comment Block</h3>
+<p>1D diagnostic data for fast ion</p>
+<h3 id="comment-block_365">Comment Block</h3>
+<p>@}
+$acc declare create(diagfast,jtfast0,jtfast1,&amp;
+$acc&amp;               wzfast,meshtf,meshnf,kapanf,kapatf,rdtemf,rddenf,&amp;
+$acc&amp;               zfast,zfast0,wpfast,wtfast0,wtfast1,densityf,flowf,flowtf,flowzf,pressurefperp,data1df,&amp;
+$acc&amp;               zonalf,zonalcf,zonalctf,zonalczf,pmarkf,markerf)</p>
+<h3 id="comment-block_366">Comment Block</h3>
+<p>\defgroup fast_electron_arrays ''Fast Electron Arrays''
+@{
+fast electron</p>
+<h3 id="comment-block_367">Comment Block</h3>
+<p>fast electron particle number</p>
+<h3 id="comment-block_368">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_369">Comment Block</h3>
+<p>fast electron particle array size</p>
+<h3 id="comment-block_370">Comment Block</h3>
+<p>fast electron gyro-averaging points</p>
+<h3 id="comment-block_371">Comment Block</h3>
+<p>fast electron load scheme
+value | meaning
+----- | -------
+0     | no kinetic particle
+1     | uniform profiles
+2     | real profiles, marker uniform in space, Maxwellian in velocity
+3     | marker proportional to real distribution</p>
+<h3 id="comment-block_372">Comment Block</h3>
+<p>fast electron charge</p>
+<h3 id="comment-block_373">Comment Block</h3>
+<p>fast electron mass</p>
+<h3 id="comment-block_374">Comment Block</h3>
+<p>fast electron time diagnostic array
+\n See also: diagnosis, PushParticle</p>
+<h3 id="comment-block_375">Comment Block</h3>
+<p>fast electron locatelectron array,
+index of the lower theta grid on inner flux surface</p>
+<h3 id="comment-block_376">Comment Block</h3>
+<p>index of the lower theta grid on outer flux surface</p>
+<h3 id="comment-block_377">Comment Block</h3>
+<p>linear interpolation weight in zeta</p>
+<h3 id="comment-block_378">Comment Block</h3>
+<p>fast electron temperature profile on simulatelectron psi grid</p>
+<h3 id="comment-block_379">Comment Block</h3>
+<p>fast electron density profile on simulatelectron psi grid</p>
+<h3 id="comment-block_380">Comment Block</h3>
+<p>fast electron \f$ \kappa_{nfe} \f$ profile on simulatelectron psi grid
+\f[
+\kappa_{nfe} \equiv -\frac{1}{n_{fe}} \frac{d n_{fe}}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_381">Comment Block</h3>
+<p>fast electron \f$ \kappa_{tfe} \f$ profile on simulatelectron psi grid
+\f[
+\kappa_{tfe} \equiv -\frac{1}{T_{fe}} \frac{d T_{fe}}{d\psi_p}
+\f]</p>
+<h3 id="comment-block_382">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_383">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_384">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_385">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_386">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_387">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_388">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_389">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_390">Comment Block</h3>
+<p>fast electron particle informatelectron array. \n
+The first index indicates the different information for each marker. \n
+Their meanings are:
+index | meaning
+----- | ----------
+1     | psi
+2     | theta
+3     | zeta
+4     | rho_para
+5     | weight
+6     | sqrt(mu)
+7     | f/g
+8,9   | particle tracking labels</p>
+<h3 id="comment-block_391">Comment Block</h3>
+<p>temporary container for initial particle informations before each
+ion Runge-Kutta push. See zfaste for the format.</p>
+<h3 id="comment-block_392">Comment Block</h3>
+<p>temporary container for initial particle informations before each
+electron sub Runge-Kutta push. See zfaste for the format.</p>
+<h3 id="comment-block_393">Comment Block</h3>
+<p>psi weight array used for perturbed field evaluation at particle location.
+weight for outer flux surface.
+\n Shape: (ngyrofe,mfe)</p>
+<h3 id="comment-block_394">Comment Block</h3>
+<p>theta weight on upper theta grid point on inner flux surface.
+\n Shape: (ngyrofe,mfe)</p>
+<h3 id="comment-block_395">Comment Block</h3>
+<p>theta weight on upper theta grid point on outer flux surface.
+\n Shape: (ngyrofe,mfe)</p>
+<h3 id="comment-block_396">Comment Block</h3>
+<p>fast electron number density on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that density is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_397">Comment Block</h3>
+<p>fast electron parallel flow field on grid. \n
+Shape: (0:1,mgrid)
+\n first dimension stands for the two zeta planes. Note that flow is
+only fully collected on zeta1 plane for field solving. zeta0 plane only
+temporarily stores contributions from current MPI.</p>
+<h3 id="comment-block_398">Comment Block</h3>
+<p>1D diagnostic data for fast ion</p>
+<h3 id="comment-block_399">Comment Block</h3>
+<p>@}
+$acc declare create(diagfaste,jtfaste0,jtfaste1,&amp;
+$acc&amp;               wzfaste,meshtfe,meshnfe,kapanfe,kapatfe,rdtemfe,rddenfe,&amp;
+$acc&amp;               zfaste,zfaste0,zfaste1,wpfaste,wtfaste0,wtfaste1,densityfe,flowfe,pressurefeperp,data1dfe,&amp;
+$acc&amp;               zonalfe,zonalcfe,pmarkfe,markerfe)</p>
+<h3 id="comment-block_400">Comment Block</h3>
+<p>global variables related to the field quantities on the field mesh</p>
+<h3 id="comment-block_401">Comment Block</h3>
+<p>The distance between two neibour radial grids for \f$ \theta=0 \f$</p>
+<h3 id="comment-block_402">Comment Block</h3>
+<p>The angle distance between two neibour poloidal plane</p>
+<h3 id="comment-block_403">Comment Block</h3>
+<p>The toroidal angle of the poloidal plane for current MPI</p>
+<h3 id="comment-block_404">Comment Block</h3>
+<p>The toroidal angle of the poloidal plane for previous MPI</p>
+<h3 id="comment-block_405">Comment Block</h3>
+<p>The number of the grid index shift for field aligned mesh on each poloidal plane</p>
+<h3 id="comment-block_406">Comment Block</h3>
+<p>The grid index array for each poloidal plane (for finite difference solver)</p>
+<h3 id="comment-block_407">Comment Block</h3>
+<p>The poloidal grid number for each flux surfaces</p>
+<h3 id="comment-block_408">Comment Block</h3>
+<p>UNKNOW</p>
+<h3 id="comment-block_409">Comment Block</h3>
+<p>The grid index array for each poloidal plane (for finite element solver)</p>
+<h3 id="comment-block_410">Comment Block</h3>
+<p>\f$\delta\psi\f$ between each two neigour flux surfaces</p>
+<h3 id="comment-block_411">Comment Block</h3>
+<p>\f$\delta\theta\f$ between two neibour poloidal grids</p>
+<h3 id="comment-block_412">Comment Block</h3>
+<p>safety factor calculate by using the field aligned mesh</p>
+<h3 id="comment-block_413">Comment Block</h3>
+<p>realistic safety factor</p>
+<h3 id="comment-block_414">Comment Block</h3>
+<p>magnetic field and its derivatives on the simulation grid position</p>
+<h3 id="comment-block_415">Comment Block</h3>
+<p>magnetic field derivatives on the simulations grid position</p>
+<h3 id="comment-block_416">Comment Block</h3>
+<p>Parallel equilibrium current derivatives on the simulations grid position</p>
+<h3 id="comment-block_417">Comment Block</h3>
+<p>Parallel equilibrium current derivatives on the simulations grid position</p>
+<h3 id="comment-block_418">Comment Block</h3>
+<p>jacobian value on the simulation grid position</p>
+<h3 id="comment-block_419">Comment Block</h3>
+<p>parallel equilibrium current(J_||/B_0) on the simulation grid position</p>
+<h3 id="comment-block_420">Comment Block</h3>
+<p>parallel equilibrium current(J_||/B_0) derivatives on the simulation grid position</p>
+<h3 id="comment-block_421">Comment Block</h3>
+<p>poloidal \psi value on the simulation grid position</p>
+<h3 id="comment-block_422">Comment Block</h3>
+<p>toroidal \psi value on the simulation grid position</p>
+<h3 id="comment-block_423">Comment Block</h3>
+<p>the effective charge on the simulation grid (for collision operator)</p>
+<h3 id="comment-block_424">Comment Block</h3>
+<p>perpendicular thermal conductivities radial profile</p>
+<h3 id="comment-block_425">Comment Block</h3>
+<p>parallel thermal conductivities radial profile</p>
+<h3 id="comment-block_426">Comment Block</h3>
+<p>flux surface averged \f$ \langle g^{\psi\psi} \rangle \f$ (for zonal solver)</p>
+<h3 id="comment-block_427">Comment Block</h3>
+<p>flux surface averaged \f$ \langle \vec{b}\cdot \vec{b} \rangle \f$</p>
+<h3 id="comment-block_428">Comment Block</h3>
+<p>UNKNOWN (output diagnosis related)</p>
+<h3 id="comment-block_429">Comment Block</h3>
+<p>metric tensor element \f$ g^{\psi\psi} \f$ on the simulation grid position</p>
+<h3 id="comment-block_430">Comment Block</h3>
+<p>metric tensor element \f$ g^{\psi\theta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_431">Comment Block</h3>
+<p>metric tensor element \f$ g^{\theta\theta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_432">Comment Block</h3>
+<p>metric tensor element \f$ g^{\zeta\zeta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_433">Comment Block</h3>
+<p>metric tensor element \f$ g^{\psi\zeta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_434">Comment Block</h3>
+<p>metric tensor element \f$ g^{\theta\zeta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_435">Comment Block</h3>
+<p>ion gyro radius value on the simulation grid position for the gyro average</p>
+<h3 id="comment-block_436">Comment Block</h3>
+<p>metric tensor element \f$ g_{\psi\psi} \f$ on the simulation grid position</p>
+<h3 id="comment-block_437">Comment Block</h3>
+<p>metric tensor element \f$ g_{\psi\theta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_438">Comment Block</h3>
+<p>metric tensor element \f$ g_{\theta\theta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_439">Comment Block</h3>
+<p>metric tensor element \f$ g_{\zeta\zeta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_440">Comment Block</h3>
+<p>metric tensor element \f$ g_{\psi\zeta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_441">Comment Block</h3>
+<p>metric tensor element \f$ g_{\theta\zeta} \f$ on the simulation grid position</p>
+<h3 id="comment-block_442">Comment Block</h3>
+<p>zonal electrostatic potential</p>
+<h3 id="comment-block_443">Comment Block</h3>
+<p>zonal radial electic field</p>
+<h3 id="comment-block_444">Comment Block</h3>
+<p>zonal parallel vector potential</p>
+<h3 id="comment-block_445">Comment Block</h3>
+<p>zonal electron fluid density</p>
+<h3 id="comment-block_446">Comment Block</h3>
+<p>zonal ion fluid density</p>
+<h3 id="comment-block_447">Comment Block</h3>
+<p>external high k modes damping term in electron continuity equation</p>
+<h3 id="comment-block_448">Comment Block</h3>
+<p>external high k modes damping term in electron continuity equation</p>
+<h3 id="comment-block_449">Comment Block</h3>
+<p>external high k modes damping term in adiabatic ohm's law</p>
+<h3 id="comment-block_450">Comment Block</h3>
+<p>hyper viscosity term in generalized ohm's law</p>
+<h3 id="comment-block_451">Comment Block</h3>
+<p>laplacian of \f$\delta A_{||} \f$</p>
+<h3 id="comment-block_452">Comment Block</h3>
+<p>laplacian of \f$\delta\phi \f$</p>
+<h3 id="comment-block_453">Comment Block</h3>
+<p>laplacian of \f$d2phi \f$</p>
+<h3 id="comment-block_454">Comment Block</h3>
+<p>electrostatic potential</p>
+<h3 id="comment-block_455">Comment Block</h3>
+<p>parallel vector potential for time advance in Ohm's law</p>
+<h3 id="comment-block_456">Comment Block</h3>
+<p>parallel perturbed B field</p>
+<h3 id="comment-block_457">Comment Block</h3>
+<p>fluid electron density for time advance in electron continuity equation</p>
+<h3 id="comment-block_458">Comment Block</h3>
+<p>time derivative of electron perturbed density \f$ \partial\delta n_{e}\partial t \f$</p>
+<h3 id="comment-block_459">Comment Block</h3>
+<p>fluid ion density for time advance in ion continuity equation</p>
+<h3 id="comment-block_460">Comment Block</h3>
+<p>time derivative of ion perturbed density \f$ \partial\delta n_{i}\partial t \f$</p>
+<h3 id="comment-block_461">Comment Block</h3>
+<p>electron perturbed parallel velocity calculated by inverting Ampere's law, \f$n_0\delta u_e/B_0\f$</p>
+<h3 id="comment-block_462">Comment Block</h3>
+<p>initial value of apara for rk2 time advance algorithm</p>
+<h3 id="comment-block_463">Comment Block</h3>
+<p>initial value of fluidne for rk2 time advance algorithm</p>
+<h3 id="comment-block_464">Comment Block</h3>
+<p>initial value of fluidni for rk2 time advance algorithm</p>
+<h3 id="comment-block_465">Comment Block</h3>
+<p>perturbed poloidal flux \f$\delta\psi\f$ in Eq.(15) of Holod 2009pop</p>
+<h3 id="comment-block_466">Comment Block</h3>
+<p>initial value of deltapsi for rk2 time advance algrithm(Eq. (18) in Holod 2009pop)</p>
+<h3 id="comment-block_467">Comment Block</h3>
+<p>Smoothed deltapsi for particle pusher</p>
+<h3 id="comment-block_468">Comment Block</h3>
+<p>Smoothed apara for particle pusher (both zonal and nonzonal components)</p>
+<h3 id="comment-block_469">Comment Block</h3>
+<p>Smoothed fluidne with both zonal and non-zonal component</p>
+<h3 id="comment-block_470">Comment Block</h3>
+<p>smoothed fluidne with only non_zonal component for solving Poisson's equation, calculation of gradphieff)</p>
+<h3 id="comment-block_471">Comment Block</h3>
+<p>Smoothed time derivative of electron perturbed density for push non-adiabatic electron in conservative scheme</p>
+<h3 id="comment-block_472">Comment Block</h3>
+<p>Smoothed fluidni with both zonal and non-zonal component</p>
+<h3 id="comment-block_473">Comment Block</h3>
+<p>smoothed fluidni with only non_zonal component for solving Poisson's equation, calculation of gradphieff)</p>
+<h3 id="comment-block_474">Comment Block</h3>
+<p>Smoothed apara for calculating laplacian \f$\nabla^2\delta A_{||}\f$  (only nonzonal component)</p>
+<h3 id="comment-block_475">Comment Block</h3>
+<p>MHD displacement for diagnosis and comparision with NOVA-K(Zhixuan2015pop)</p>
+<h3 id="comment-block_476">Comment Block</h3>
+<p>save phi adiabatic to be corrected in hybrid loop</p>
+<h3 id="comment-block_477">Comment Block</h3>
+<p>bootstrap current calculated using gradient of fluid electron pressure, only used in NTM simulation</p>
+<h3 id="comment-block_478">Comment Block</h3>
+<p>fluid electron pressure for time advance in pressure evolution equation, only used in NTM simulation</p>
+<h3 id="comment-block_479">Comment Block</h3>
+<p>initial value of deltapressure for rk2 time advance algorithm</p>
+<h3 id="comment-block_480">Comment Block</h3>
+<p>\f$ \partial \delta B/\partial \psi_0 \f$, only used in NTM simulation</p>
+<h3 id="comment-block_481">Comment Block</h3>
+<p>\f$ \partial \delta B/\partial \delta\psi \f$, only used in NTM simulation</p>
+<h3 id="comment-block_482">Comment Block</h3>
+<p>parallel gradient of deltapressure, only used in NTM simulation</p>
+<h3 id="comment-block_483">Comment Block</h3>
+<p>perpendicular laplacian of deltapressure, only used in NTM simulation</p>
+<h3 id="comment-block_484">Comment Block</h3>
+<p>Nonlinear apara generated from total nonlinear fields (J. Bao17POP Eq.(31))</p>
+<h3 id="comment-block_485">Comment Block</h3>
+<p>Time derivative of aparanl for particle push</p>
+<h3 id="comment-block_486">Comment Block</h3>
+<p>taparanl used in the weight equation of PushParticle.F90</p>
+<h3 id="comment-block_487">Comment Block</h3>
+<p>initial value of aparanl for rk2 advance algorithm</p>
+<h3 id="comment-block_488">Comment Block</h3>
+<p>Smoothed aparanl for particle pusher (only nonzonal components)</p>
+<h3 id="comment-block_489">Comment Block</h3>
+<p>ponderomotive force nonlinear parallel electric field</p>
+<h3 id="comment-block_490">Comment Block</h3>
+<p>gradient of the electrostatic potential</p>
+<h3 id="comment-block_491">Comment Block</h3>
+<p>MHD displacement</p>
+<h3 id="comment-block_492">Comment Block</h3>
+<p>gradient of parallel vector potential</p>
+<h3 id="comment-block_493">Comment Block</h3>
+<p>gradient of parallel perturbed B field</p>
+<h3 id="comment-block_494">Comment Block</h3>
+<p>gradient of fluidue(note fluidue is \f$n_0\delta u_e/B_0\f$)</p>
+<h3 id="comment-block_495">Comment Block</h3>
+<p>gradient of electron fluid density(fluidne)</p>
+<h3 id="comment-block_496">Comment Block</h3>
+<p>non-zonal gradient of electron fluid density(fluidne)</p>
+<h3 id="comment-block_497">Comment Block</h3>
+<p>non-zonal gradient of ion fluid density(fluidni)</p>
+<h3 id="comment-block_498">Comment Block</h3>
+<p>gradient of smoothed perturbed poloidal flux: sdeltapsi</p>
+<h3 id="comment-block_499">Comment Block</h3>
+<p>gradient of \f$\phi_{eff}\f$</p>
+<h3 id="comment-block_500">Comment Block</h3>
+<p>gradient of high order kinetic electron density: densitye</p>
+<h3 id="comment-block_501">Comment Block</h3>
+<p>gradient of parallel perturbed electron pressure</p>
+<h3 id="comment-block_502">Comment Block</h3>
+<p>gradient of perpendicular perturbed electron pressure</p>
+<h3 id="comment-block_503">Comment Block</h3>
+<p>output by Zhixuan(Zhixuan2015pop Eq.(A3))</p>
+<h3 id="comment-block_504">Comment Block</h3>
+<p>output by Zhixuan</p>
+<h3 id="comment-block_505">Comment Block</h3>
+<p>diagnosis flux surface index</p>
+<h3 id="comment-block_506">Comment Block</h3>
+<p>number of diagnosis modes</p>
+<h3 id="comment-block_507">Comment Block</h3>
+<p>diagnosis toroidal mode value</p>
+<h3 id="comment-block_508">Comment Block</h3>
+<p>diagnosis poloidal mode value</p>
+<h3 id="comment-block_509">Comment Block</h3>
+<p>lower poloidal grid index on flux surfaces in laplacian and smooth</p>
+<h3 id="comment-block_510">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_511">Comment Block</h3>
+<p>the weight of upper poloidal grid index on flux surfaces in laplacian and smooth</p>
+<h3 id="comment-block_512">Comment Block</h3>
+<p>UNKNOWN</p>
+<h3 id="comment-block_513">Comment Block</h3>
+<p>the grid number used for calculating tokamak poisson equation using 4-points averaging</p>
+<h3 id="comment-block_514">Comment Block</h3>
+<p>the grid number used for calculating tokamak laplacian on each points</p>
+<h3 id="comment-block_515">Comment Block</h3>
+<p>the grid number used for calculating tokamak laplacian by fem</p>
+<h3 id="comment-block_516">Comment Block</h3>
+<p>UNKNOWN(Yong2015pop)</p>
+<h3 id="comment-block_517">Comment Block</h3>
+<p>maximum b field on inner and outer simulation flux surfaces</p>
+<h3 id="comment-block_518">Comment Block</h3>
+<p>mininum b field on inner and outer simulation flux surfaces</p>
+<h3 id="comment-block_519">Comment Block</h3>
+<p>theta index corresponding to the mininum b field on inner and outer simulation flux surfaces</p>
+<h3 id="comment-block_520">Comment Block</h3>
+<p>theta index corresponding to the maximum b field on inner and outer simulation flux surfaces</p>
+<h3 id="comment-block_521">Comment Block</h3>
+<p>theta index array corresponding to b field bins in increasing theta direction from thetabmin to thetabmax</p>
+<h3 id="comment-block_522">Comment Block</h3>
+<p>theta index array corresponding to b field bins in decreasing theta direction from thetabmin to thetabmax</p>
+<h3 id="comment-block_523">Comment Block</h3>
+<p>petsc_ps: poisson solver for ilaplacian=1
+petsc_bpara: perpendicular force balance for ilaplacian=1 and deltabpara=1(fem=0)
+petsc_ohm: generalized ohm's law in cs_model for ilaplacian=1 and cs_method=1(fem=0)
+petsc_ps_ilap0: poisson solver and inverting ampere's law for ilaplacian=0 and using petsc(fem=0)
+petsc_ps2: ampere sovler for joey's fem method when fem=1</p>
+<h2 id="structure-overview">Structure Overview</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

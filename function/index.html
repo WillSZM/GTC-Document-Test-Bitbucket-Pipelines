@@ -1,0 +1,3290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>function.F90 - GTC Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functionf90" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GTC Documentation" class="md-header__button md-logo" aria-label="GTC Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GTC Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              function.F90
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GTC Documentation" class="md-nav__button md-logo" aria-label="GTC Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GTC Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📂 源代码文档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            📂 源代码文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ChargeParticle.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ChargeParticle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/M3DC1_interface.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    M3DC1 interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/PushFKI.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PushFKI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/PushParticle.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PushParticle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/SDP_interface.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDP interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/VMEC_interface.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VMEC interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/adios2_common.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    adios2 common
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/adios2_data1d_diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    adios2 data1d diagnostics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/adios2_history_diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    adios2 history diagnostics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/antenna.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    antenna
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/boundary_decay.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    boundary decay
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/bparasolver.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    bparasolver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/charge.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    charge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/collision.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    collision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/dataout3d.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    dataout3d
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/diagnosis.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    diagnosis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/eqdata.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    eqdata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/eqplot.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    eqplot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/fft_gl.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fft gl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/field.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    field
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/field_operators.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    field operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/function.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/linsolver.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    linsolver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/load.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    load
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/m_dataout3d_adios.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    m dataout3d adios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/main.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    main
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/module.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/ohm_law.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ohm law
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/petsc.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    petsc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/petsc_old.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    petsc old
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/phishot.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    phishot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/physical_meaning.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    physical meaning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/poisson.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    poisson
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/pressure_push.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    pressure push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/push.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/pushfield.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    pushfield
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/radial_bin.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    radial bin
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/restart.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    restart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/setup.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/shift.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    shift
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/simple_error_handler.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    simple error handler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/smooth.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    smooth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/snapshot.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    snapshot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/tracking.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/utility.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    utility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Comments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Comments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comment-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_52" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_53" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_54" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_55" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_56" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_57" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_58" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_59" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_60" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_61" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_62" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_63" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_64" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_65" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_66" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_67" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_68" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_69" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_70" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_71" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_72" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_73" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_74" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_75" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_76" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_77" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_78" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_79" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_80" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_81" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_82" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_83" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_84" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_85" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_86" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_87" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_88" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_89" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_90" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_91" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_92" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_93" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_94" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_95" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_96" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_97" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_98" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_99" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_101" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_102" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_103" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_104" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_105" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_106" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_107" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_108" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_109" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_110" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_111" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_112" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_113" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_114" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_115" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_116" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_117" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_118" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_119" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_120" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_121" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_122" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_123" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_124" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_125" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_126" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_127" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_128" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_129" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_130" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_131" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_132" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_133" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_134" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_135" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_136" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_137" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_138" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_139" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_140" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_141" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_142" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_143" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_144" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_145" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_146" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_147" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_148" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_149" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_150" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_151" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_152" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_153" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_154" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_155" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_156" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_157" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_158" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_159" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-block_160" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment Block
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure Overview
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="functionf90">function.F90</h1>
+<h2 id="documentation-comments">Documentation Comments</h2>
+<h3 id="comment-block">Comment Block</h3>
+<p>\file
+numerical functions related to generic smoothing and spline interpolation
+\author Z. Lin, L. Shi
+\date 01/24/2017</p>
+<h3 id="comment-block_1">Comment Block</h3>
+<p>\brief quadratic spline interpolation functions
+\details generic 1D, 2D, and 3D quadratic spline interpolation functions are
+provided. Specific evaluators for equilibrium quantities are also provided.</p>
+<h3 id="comment-block_2">Comment Block</h3>
+<p>function of plasma profile
+density spline</p>
+<h3 id="comment-block_3">Comment Block</h3>
+<p>\f$ dn/d\psi \f$</p>
+<h3 id="comment-block_4">Comment Block</h3>
+<p>temperature spline</p>
+<h3 id="comment-block_5">Comment Block</h3>
+<p>\f$ dT/d\psi \f$</p>
+<h3 id="comment-block_6">Comment Block</h3>
+<p>pressure</p>
+<h3 id="comment-block_7">Comment Block</h3>
+<p>Z_eff</p>
+<h3 id="comment-block_8">Comment Block</h3>
+<p>toroidal rotation</p>
+<h3 id="comment-block_9">Comment Block</h3>
+<p>E_r</p>
+<h3 id="comment-block_10">Comment Block</h3>
+<p>function from equilibrium geometry
+safety factor</p>
+<h3 id="comment-block_11">Comment Block</h3>
+<p>\f$ dq/d\psi \f$</p>
+<h3 id="comment-block_12">Comment Block</h3>
+<p>\f$ g(\psi) \f$</p>
+<h3 id="comment-block_13">Comment Block</h3>
+<p>\f$ dg/d\psi \f$</p>
+<h3 id="comment-block_14">Comment Block</h3>
+<p>\f$ I(\psi) \f$</p>
+<h3 id="comment-block_15">Comment Block</h3>
+<p>\f$ dI/d\psi \f$</p>
+<h3 id="comment-block_16">Comment Block</h3>
+<p>\f$ \psi_t(\psi_p) \f$</p>
+<h3 id="comment-block_17">Comment Block</h3>
+<p>\f$ d\psi_t/d\psi_p \f$</p>
+<h3 id="comment-block_18">Comment Block</h3>
+<p>\f$ \psi_p(\psi_t) \f$</p>
+<h3 id="comment-block_19">Comment Block</h3>
+<p>minor radius</p>
+<h3 id="comment-block_20">Comment Block</h3>
+<p>\f$ dr/d\psi \f$</p>
+<h3 id="comment-block_21">Comment Block</h3>
+<p>radial grid \f$ rg(\psi) \f$</p>
+<h3 id="comment-block_22">Comment Block</h3>
+<p>\f$ \psi(rg) \f$</p>
+<h3 id="comment-block_23">Comment Block</h3>
+<p>magnetic field amplitude \f$ b(\psi, \theta) \f$</p>
+<h3 id="comment-block_24">Comment Block</h3>
+<p>\f$ \partial b/\partial \psi \f$</p>
+<h3 id="comment-block_25">Comment Block</h3>
+<p>\f$ \partial b/\partial \theta \f$</p>
+<h3 id="comment-block_26">Comment Block</h3>
+<p>\f$ \partial b/\partial \zeta = 0\f$ for 2D equilibria</p>
+<h3 id="comment-block_27">Comment Block</h3>
+<p>major radius coordinate \f$ X(\psi,\theta) \f$</p>
+<h3 id="comment-block_28">Comment Block</h3>
+<p>vertical coordinate \f$ Z(\psi,\theta) \f$</p>
+<h3 id="comment-block_29">Comment Block</h3>
+<p>\f$ \partial X/\partial \psi \f$</p>
+<h3 id="comment-block_30">Comment Block</h3>
+<p>\f$ \partial Z/\partial \psi \f$</p>
+<h3 id="comment-block_31">Comment Block</h3>
+<p>\f$ \partial X/\partial \theta \f$</p>
+<h3 id="comment-block_32">Comment Block</h3>
+<p>\f$ \partial Z/\partial \theta \f$</p>
+<h3 id="comment-block_33">Comment Block</h3>
+<p>\f$ \partial X/\partial \zeta = 0 \f$ for 2D equilibria</p>
+<h3 id="comment-block_34">Comment Block</h3>
+<p>\f$ \partial X/\partial \zeta = 0 \f$ for 2D equilibria</p>
+<h3 id="comment-block_35">Comment Block</h3>
+<p>Difference between toroidal angle phi in cylindrical and magentic (Boozer) coordinates</p>
+<h3 id="comment-block_36">Comment Block</h3>
+<p>\f$ \partial phi/\partial \psi \f$</p>
+<h3 id="comment-block_37">Comment Block</h3>
+<p>\f$ \partial phi/\partial \theta \f$</p>
+<h3 id="comment-block_38">Comment Block</h3>
+<p>\f$ \partial b/\partial \zeta = 0\f$ for 2D equilibria</p>
+<h3 id="comment-block_39">Comment Block</h3>
+<p>magnetic field amplitude \f$ b(\psi, \theta, \zeta) \f$</p>
+<h3 id="comment-block_40">Comment Block</h3>
+<p>\f$ \partial b/\partial \psi \f$</p>
+<h3 id="comment-block_41">Comment Block</h3>
+<p>\f$ \partial b/\partial \theta \f$</p>
+<h3 id="comment-block_42">Comment Block</h3>
+<p>\f$ \partial b/\partial \zeta \f$</p>
+<h3 id="comment-block_43">Comment Block</h3>
+<p>major radius coordinate \f$ X(\psi,\theta,\zeta) \f$</p>
+<h3 id="comment-block_44">Comment Block</h3>
+<p>\f$ \partial X/\partial \psi \f$</p>
+<h3 id="comment-block_45">Comment Block</h3>
+<p>\f$ \partial X/\partial \theta \f$</p>
+<h3 id="comment-block_46">Comment Block</h3>
+<p>\f$ \partial X/\partial \zeta \f$</p>
+<h3 id="comment-block_47">Comment Block</h3>
+<p>vertical coordinate \f$ Z(\psi,\theta,\zeta) \f$</p>
+<h3 id="comment-block_48">Comment Block</h3>
+<p>\f$ \partial Z/\partial \psi \f$</p>
+<h3 id="comment-block_49">Comment Block</h3>
+<p>\f$ \partial Z/\partial \theta \f$</p>
+<h3 id="comment-block_50">Comment Block</h3>
+<p>\f$ \partial Z/\partial \zeta \f$</p>
+<h3 id="comment-block_51">Comment Block</h3>
+<p>Difference between geometric toroidal angle \f$ \Phi(\psi,\theta,\zeta) \f$
+and toroidal angle in Boozer coordinates</p>
+<h3 id="comment-block_52">Comment Block</h3>
+<p>\f$ \partial \Phi/\partial \psi \f$</p>
+<h3 id="comment-block_53">Comment Block</h3>
+<p>\f$ \partial \Phi/\partial \theta \f$</p>
+<h3 id="comment-block_54">Comment Block</h3>
+<p>\f$ \partial \Phi/\partial \zeta \f$</p>
+<h3 id="comment-block_55">Comment Block</h3>
+<p>Jacobian calculated by Boozer formula</p>
+<h3 id="comment-block_56">Comment Block</h3>
+<p>Jacobian calculated by metric tensor</p>
+<h3 id="comment-block_57">Comment Block</h3>
+<p>toroidal current I</p>
+<h3 id="comment-block_58">Comment Block</h3>
+<p>\f$ \partial delta/\partial \psi \f$</p>
+<h3 id="comment-block_59">Comment Block</h3>
+<p>\f$ \partial delta/\partial \theta \f$</p>
+<h3 id="comment-block_60">Comment Block</h3>
+<p>\f$ \partial delta/\partial \zeta = 0\f$ for 2D equilibria</p>
+<h3 id="comment-block_61">Comment Block</h3>
+<p>\f$ \partial jeq/\partial \psi \f$</p>
+<h3 id="comment-block_62">Comment Block</h3>
+<p>\f$ \partial jeq/\partial \theta \f$</p>
+<h3 id="comment-block_63">Comment Block</h3>
+<p>\f$ \partial jeq/\partial \zeta = 0\f$ for 2D equilibria</p>
+<h3 id="comment-block_64">Comment Block</h3>
+<p>\f$ \partial delta/\partial \psi \f$</p>
+<h3 id="comment-block_65">Comment Block</h3>
+<p>\f$ \partial delta/\partial \theta \f$</p>
+<h3 id="comment-block_66">Comment Block</h3>
+<p>\f$ \partial delta/\partial \zeta \f$</p>
+<h3 id="comment-block_67">Comment Block</h3>
+<p>\f$ \partial jeq/\partial \psi \f$</p>
+<h3 id="comment-block_68">Comment Block</h3>
+<p>\f$ \partial jeq/\partial \theta \f$</p>
+<h3 id="comment-block_69">Comment Block</h3>
+<p>\f$ \partial jeq/\partial \zeta \f$</p>
+<h3 id="comment-block_70">Comment Block</h3>
+<p>\brief Generic 1D spline evaluations
+\details Evaluate f(x) at given x
+By default, spline starts from x=0,y=0, and get up to x=(nx-1)*delx,
+out of bound x values are not checked, and the function is evaluated using
+the last cell spline coefficients.</p>
+<h3 id="comment-block_71">Comment Block</h3>
+<p>Boundary condition needs to be provided by programmer
+BC 0: use spline0
+BC 1: use spline1
+BC 2: use spline_periodic
+\sa construct_spline1d</p>
+<h3 id="comment-block_72">Comment Block</h3>
+<p>@param[in] x
+evaluation location</p>
+<h3 id="comment-block_73">Comment Block</h3>
+<p>@param[in] deriv
+derivative order: 0 for f(x), 1 for f'(x)</p>
+<h3 id="comment-block_74">Comment Block</h3>
+<p>@param[in] nx
+total number of grids in spline mesh</p>
+<h3 id="comment-block_75">Comment Block</h3>
+<p>@param[in] delx
+spline grid step size</p>
+<h3 id="comment-block_76">Comment Block</h3>
+<p>@param[in] y
+spline coefficients array</p>
+<h3 id="comment-block_77">Comment Block</h3>
+<p>@param[in] bcx
+Boundary condition
+- 0: normal spline with calculated 1st derivative
+- 1: special 1st cell square root spline
+- 2: periodic boundary condition</p>
+<h3 id="comment-block_78">Comment Block</h3>
+<p>normal 1D spline evaluator</p>
+<h3 id="comment-block_79">Comment Block</h3>
+<p>derivative of normal 1D spline function</p>
+<h3 id="comment-block_80">Comment Block</h3>
+<p>1D spline with first point being linear function y=sqrt(x)</p>
+<h3 id="comment-block_81">Comment Block</h3>
+<p>derivative of 1D spline with 1st cell x being \f$ \sqrt{\psi} \f$</p>
+<h3 id="comment-block_82">Comment Block</h3>
+<p>\brief periodic spline evaluation
+\details Same as spline0 but out of range values are wrapped back in to its periodic
+image location.</p>
+<h3 id="comment-block_83">Comment Block</h3>
+<p>\brief derivative of 1D spline defined on periodic domain</p>
+<h3 id="comment-block_84">Comment Block</h3>
+<p>\brief Generic 2D spline function
+\details  Evaluate f(x,y) or its partial derivatives using the created spline
+coefficients for f
+By default, spline starts from x=0,y=0, and get up to x=(nx-1)<em>delx,
+and y=(ny-1)</em>dely. Out of range (x,y) are not checked</p>
+<h3 id="comment-block_85">Comment Block</h3>
+<p>\author Lei Shi</p>
+<h3 id="comment-block_86">Comment Block</h3>
+<p>@param[in] x
+the first coordinate where the value of f is evaluated</p>
+<h3 id="comment-block_87">Comment Block</h3>
+<p>@param[in] y
+the second coordinate where the value of f is evaluated</p>
+<h3 id="comment-block_88">Comment Block</h3>
+<p>@param[in] deriv
+derivative flag.
+value | meaning
+----- | -------
+0     | \f$ f(x,y) \f$
+1     | \f$ \partial f/ \partial x \f$
+2     | \f$ \partial f/ \partial y \f$</p>
+<h3 id="comment-block_89">Comment Block</h3>
+<p>@param[in] nx
+number of spline nodes in x</p>
+<h3 id="comment-block_90">Comment Block</h3>
+<p>@param[in] ny
+number of spline nodes in y</p>
+<h3 id="comment-block_91">Comment Block</h3>
+<p>@param[in] delx
+stepsize for each spline cell in x</p>
+<h3 id="comment-block_92">Comment Block</h3>
+<p>@param[in] dely
+stepsize for each spline cell in y</p>
+<h3 id="comment-block_93">Comment Block</h3>
+<p>@param[in] f
+2D spline coefficient array constructed by construct_spline2d subroutine</p>
+<h3 id="comment-block_94">Comment Block</h3>
+<p>@param[in] bcx
+Boundary condition in x used when f is created.</p>
+<h3 id="comment-block_95">Comment Block</h3>
+<p>@param[in] bcy
+Boundary condition in y used when f is created.
+\warning Boundary Condition consistency is not checked! It is the programer's
+responsibility to make sure bcx,bcy passed in is the same as those
+used for construct_spline2d.</p>
+<h3 id="comment-block_96">Comment Block</h3>
+<p>\deprecated
+Old 2D/3D spline evaluator. Should be removed when all changes have been made to other parts of the code.</p>
+<h3 id="comment-block_97">Comment Block</h3>
+<p>\brief Generic 3D spline function
+\details Evaluate f(x,y,z) or its partial derivatives using the created spline
+coefficients for f
+By default, spline starts from x=0,y=0,z=0 and get up to x=(nx-1)<em>delx,
+and y=(ny-1)</em>dely, z=(nz-1)*delz. Out of range (x,y,z) are not checked</p>
+<h3 id="comment-block_98">Comment Block</h3>
+<p>@author Lei Shi</p>
+<h3 id="comment-block_99">Comment Block</h3>
+<p>@param[in] x
+the first coordinate where the value of f is evaluated</p>
+<h3 id="comment-block_100">Comment Block</h3>
+<p>@param[in] y
+the second coordinate where the value of f is evaluated</p>
+<h3 id="comment-block_101">Comment Block</h3>
+<p>@param[in] z
+the third coordinate where the value of f is evaluated</p>
+<h3 id="comment-block_102">Comment Block</h3>
+<p>@param[in] deriv
+derivative flag.
+value | meaning
+----- | -------
+0     | \f$ f(x,y) \f$
+1     | \f$ \partial f/ \partial x \f$
+2     | \f$ \partial f/ \partial y \f$
+3     | \f$ \partial f/ \partial z \f$</p>
+<h3 id="comment-block_103">Comment Block</h3>
+<p>@param[in] nx
+number of spline nodes in x</p>
+<h3 id="comment-block_104">Comment Block</h3>
+<p>@param[in] ny
+number of spline nodes in y</p>
+<h3 id="comment-block_105">Comment Block</h3>
+<p>@param[in] nz
+number of spline nodes in z</p>
+<h3 id="comment-block_106">Comment Block</h3>
+<p>@param[in] delx
+stepsize for each spline cell in x</p>
+<h3 id="comment-block_107">Comment Block</h3>
+<p>@param[in] dely
+stepsize for each spline cell in y</p>
+<h3 id="comment-block_108">Comment Block</h3>
+<p>@param[in] delz
+stepsize for each spline cell in z</p>
+<h3 id="comment-block_109">Comment Block</h3>
+<p>@param[in] f
+3D spline coefficient array constructed by construct_spline3d subroutine</p>
+<h3 id="comment-block_110">Comment Block</h3>
+<p>@param[in] bcx
+Boundary condition in x used when f is created.</p>
+<h3 id="comment-block_111">Comment Block</h3>
+<p>@param[in] bcy
+Boundary condition in y used when f is created.</p>
+<h3 id="comment-block_112">Comment Block</h3>
+<p>@param[in] bcz
+Boundary condition in z used when f is created.</p>
+<h3 id="comment-block_113">Comment Block</h3>
+<p>\warning Boundary Condition consistency is not checked! It is the programer's
+responsibility to make sure bcx,bcy passed in is the same as those
+used for construct_spline3d.</p>
+<h3 id="comment-block_114">Comment Block</h3>
+<p>\defgroup construct_spline ''Generic spline construction''
+@{</p>
+<h3 id="comment-block_115">Comment Block</h3>
+<p>Generic construct 1D spline</p>
+<h3 id="comment-block_116">Comment Block</h3>
+<p>@param[in] nx
+total spline grid number. The cell number is nx-1</p>
+<h3 id="comment-block_117">Comment Block</h3>
+<p>@param[in] delx
+spline step size</p>
+<h3 id="comment-block_118">Comment Block</h3>
+<p>@param[in,out] f
+spline coefficients array. f(1,1:nx) is passed in as the given function values on grids.
+f(1:3, 1:nx) are then calculated to represent the spline function</p>
+<h3 id="comment-block_119">Comment Block</h3>
+<p>@param[in] bcx
+Boundary condition.</p>
+<h3 id="comment-block_120">Comment Block</h3>
+<p>Three kinds of boundary conditions are available for each dimension
+- BC 0: Use 341 formula to obtain the estimated derivative at x=0
+- BC 1: Use 341 formula to obtain the estimated derivative at x=xmax, and use
+\f[
+f(x) = a + b\sqrt{x} + cx
+\f]
+formula for the first cell near x=0.
+- BC 2: Periodic condition, df/dx(0)=df/dx(xmax)</p>
+<h3 id="comment-block_121">Comment Block</h3>
+<p>Generic construct 2D spline</p>
+<h3 id="comment-block_122">Comment Block</h3>
+<p>@param[in] nx
+total spline grid number in x. The cell number is nx-1</p>
+<h3 id="comment-block_123">Comment Block</h3>
+<p>@param[in] ny
+total spline grid number in y. The cell number is ny-1</p>
+<h3 id="comment-block_124">Comment Block</h3>
+<p>@param[in] delx
+spline step size in x</p>
+<h3 id="comment-block_125">Comment Block</h3>
+<p>@param[in] dely
+spline step size in y</p>
+<h3 id="comment-block_126">Comment Block</h3>
+<p>@param[in,out] f
+spline coefficients array. f(1,1:nx,1:ny) is passed in as the given function values on grids.
+f(1:9,1:nx,1:ny) are then calculated to represent the spline function</p>
+<h3 id="comment-block_127">Comment Block</h3>
+<p>@param[in] bcx
+Boundary condition in x.</p>
+<h3 id="comment-block_128">Comment Block</h3>
+<p>@param[in] bcy
+Boundary condition in y.</p>
+<h3 id="comment-block_129">Comment Block</h3>
+<p>\sa construct_spline1d</p>
+<h3 id="comment-block_130">Comment Block</h3>
+<p>Generic construct 3D spline</p>
+<h3 id="comment-block_131">Comment Block</h3>
+<p>@param[in] nx
+total spline grid number in x. The cell number is nx-1</p>
+<h3 id="comment-block_132">Comment Block</h3>
+<p>@param[in] ny
+total spline grid number in y. The cell number is ny-1</p>
+<h3 id="comment-block_133">Comment Block</h3>
+<p>@param[in] nz
+total spline grid number in z. The cell number is nz-1</p>
+<h3 id="comment-block_134">Comment Block</h3>
+<p>@param[in] delx
+spline step size in x</p>
+<h3 id="comment-block_135">Comment Block</h3>
+<p>@param[in] dely
+spline step size in y</p>
+<h3 id="comment-block_136">Comment Block</h3>
+<p>@param[in] delz
+spline step size in z</p>
+<h3 id="comment-block_137">Comment Block</h3>
+<p>@param[in,out] f
+spline coefficients array. f(1,:,:,:) is passed in as the given function values on grids.
+f(1:9,:,:,:) are then calculated to represent the spline function</p>
+<h3 id="comment-block_138">Comment Block</h3>
+<p>@param[in] bcx
+Boundary condition in x.</p>
+<h3 id="comment-block_139">Comment Block</h3>
+<p>@param[in] bcy
+Boundary condition in y.</p>
+<h3 id="comment-block_140">Comment Block</h3>
+<p>@param[in] bcz
+Boundary condition in z.</p>
+<h3 id="comment-block_141">Comment Block</h3>
+<p>\sa construct_spline1d</p>
+<h3 id="comment-block_142">Comment Block</h3>
+<p>construct 1D spline with on x=[0,xmax], grid x_i = (i-1)<em>delx, delx=xmax/(nsp-1)
+in domain i, y = y(1,i) + y(2,i)</em>delx + y(3,i)<em>delx</em>*2</p>
+<h3 id="comment-block_143">Comment Block</h3>
+<p>spline1 for cases with first point being function y=y1+y2<em>sqrt(x)+y3</em>x
+Detailed documentation can be found in Doc/Developer_Notes/periodic_spline.pdf Appendix C</p>
+<h3 id="comment-block_144">Comment Block</h3>
+<p>Construct 1D Quadratic Spline using periodic boundary condition</p>
+<p>Check the documentation in Doc/Developers_Notes/periodic_spline.pdf for a detailed discussion
+\author Lei Shi
+\date Oct 16, 2016</p>
+<h3 id="comment-block_145">Comment Block</h3>
+<p>@param[in] nsp
+spline grid number</p>
+<h3 id="comment-block_146">Comment Block</h3>
+<p>@param[in] delx
+spline cell size</p>
+<h3 id="comment-block_147">Comment Block</h3>
+<p>@param[in,out] y
+spline coefficients. y(1,:) is passed in as given values.</p>
+<h3 id="comment-block_148">Comment Block</h3>
+<p>inversion of spline0 y(x) to x(y)</p>
+<h3 id="comment-block_149">Comment Block</h3>
+<p>inversion of spline1 y(x) to x(y)</p>
+<h3 id="comment-block_150">Comment Block</h3>
+<p>\deprecated
+legacy construction of 2D spline coefficients. Should be removed after other parts are changed.</p>
+<h3 id="comment-block_151">Comment Block</h3>
+<p>\deprecated
+should be removed after other parts are changed.
+Construct 2D spline with the second dimension periodic</p>
+<h3 id="comment-block_152">Comment Block</h3>
+<p>\author Lei Shi
+\date Oct 16, 2016
+\sa construct_spline_periodic</p>
+<h3 id="comment-block_153">Comment Block</h3>
+<p>\deprecated
+Old VMEC 3D spline constructor, will be replaced by a 3D field generator, and apply
+construct_spline3d to created the coefficients</p>
+<h3 id="comment-block_154">Comment Block</h3>
+<p>TEMPORARY UPGRADED TO USE PERIODIC SPLINE IN ZETA
+By Lei Shi, Dec 13, 2016</p>
+<h3 id="comment-block_155">Comment Block</h3>
+<p>TEMPORARY UPGRADED TO USE PARTIAL TORUS CAPABILITY
+By Lei Shi, Feb 24, 2017</p>
+<h3 id="comment-block_156">Comment Block</h3>
+<p>@todo
+Slow data structure, try to change the data in (ndim, ny, nx) shape</p>
+<h3 id="comment-block_157">Comment Block</h3>
+<p>@}</p>
+<h3 id="comment-block_158">Comment Block</h3>
+<p>Cross product
+\f$ \vec{v}_3 = \vec{v}_1 \times \vec{v}_2 \f$</p>
+<h3 id="comment-block_159">Comment Block</h3>
+<p>dot product
+\f$ f=\vec{v}_1 \cdot \vec{v}_2 \f$</p>
+<h3 id="comment-block_160">Comment Block</h3>
+<p>@param[in] n
+length of the vectors</p>
+<h2 id="structure-overview">Structure Overview</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
